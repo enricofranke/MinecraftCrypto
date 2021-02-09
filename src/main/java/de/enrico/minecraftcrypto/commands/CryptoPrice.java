@@ -6,20 +6,32 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import static de.enrico.minecraftcrypto.rest.getCryptoCurrencys.getCurrency;
+
 public class CryptoPrice implements CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (!(cmd instanceof Player)) {
+     /*   if (!(cmd instanceof Player)) {
             Bukkit.getConsoleSender().sendMessage("§cERROR");
             return false;
-        }
-        Player player = (Player)sender;
 
+        }
+
+
+      */
+        Player player = (Player)sender;
+        player.sendMessage("Test");
+        System.out.println();
         // /crypto <Crypto>
         if (args.length == 1) {
             switch (args[0]) {
-                case "Xrp":
-                    player.sendMessage("Xrp: ");
+                case "Xrp":{
+                    try {
+                        player.sendMessage("Xrp: "+getCurrency("XRP"));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    }
                     break;
                 case "Btc":
                     player.sendMessage("Btc: ");

@@ -1,0 +1,6 @@
+main: de.enrico.minecraftcrypto.MinecraftCrypto
+version: 1.0
+name: MinecraftCrypto
+commands:
+  crypto:
+    description: This is a Crypto Plugin lol
